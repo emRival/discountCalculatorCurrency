@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:discount_and_currency_calculator/model/discount_history.dart';
 import 'package:discount_and_currency_calculator/pages/navigation.dart';
 import 'package:discount_and_currency_calculator/providers/currency_provider.dart';
@@ -23,7 +24,12 @@ void main() async {
         ),
         ChangeNotifierProvider(create: (_) => CurrencyProvider()),
       ],
-      child: const DiscountCalculatorApp(),
+      child: DevicePreview(
+          isToolbarVisible: false,
+          defaultDevice: Devices.ios.iPhone13ProMax,
+          devices: [],
+          enabled: false,
+          builder: (context) => const DiscountCalculatorApp()),
     ),
   );
 }
@@ -34,6 +40,9 @@ class DiscountCalculatorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       title: 'Discount Calculator',
       theme: ThemeData(primarySwatch: Colors.blue),
