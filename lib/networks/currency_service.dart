@@ -9,7 +9,7 @@ class CurrencyService {
 
   Future<CurrencyResponse> fetchRates({required String baseCurrency}) async {
     final Uri url = Uri.parse(
-        '$baseUrl?apikey=$apiKey&currencies=USD,EUR,IDR,JPY,CNY,KRW&base_currency=$baseCurrency');
+        '$baseUrl?apikey=$apiKey&base_currency=$baseCurrency&currencies=USD,EUR,IDR,JPY,CNY,KRW');
 
     final http.Response response = await http.get(url);
 
