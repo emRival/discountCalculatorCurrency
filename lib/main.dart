@@ -28,7 +28,7 @@ void main() async {
           isToolbarVisible: false,
           defaultDevice: Devices.ios.iPhone13ProMax,
           devices: [],
-          enabled: false,
+          enabled: true,
           builder: (context) => const DiscountCalculatorApp()),
     ),
   );
