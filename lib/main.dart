@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:discount_and_currency_calculator/model/discount_history.dart';
 import 'package:discount_and_currency_calculator/pages/navigation.dart';
+import 'package:discount_and_currency_calculator/pages/splash_screen.dart';
 import 'package:discount_and_currency_calculator/providers/currency_provider.dart';
 import 'package:discount_and_currency_calculator/providers/discount_provider.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,7 @@ class DiscountCalculatorApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Discount Calculator',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const MyNavigation(),
+      home: const SplashScreen(),
     );
   }
 }
