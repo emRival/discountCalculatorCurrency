@@ -1,7 +1,6 @@
 import 'package:discount_and_currency_calculator/components/result_card.dart';
 import 'package:discount_and_currency_calculator/components/title_widget.dart';
-import 'package:discount_and_currency_calculator/pages/history_page.dart';
-import 'package:discount_and_currency_calculator/providers/currency_provider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';

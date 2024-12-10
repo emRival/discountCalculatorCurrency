@@ -1,5 +1,5 @@
 name: discount_and_currency_calculator
-description: "A new Flutter project."
+description: "Aplikasi Kalkulator Diskon"
 publish_to: 'none'
 version: 0.1.0
 
@@ -10,6 +10,7 @@ dependencies:
   device_preview: ^1.2.0
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.2
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   http: ^1.2.2
@@ -25,3 +26,15 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+   - assets/images/
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon.png"
+  background_color: "#6b6b6b"
+  web:
+    generate: true
+    image_path: "assets/images/icon.png"
+    background_color: "#6b6b6b"

@@ -8,6 +8,7 @@ import 'package:hive/hive.dart';
 import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 import 'database/hive_manager.dart';
+import 'providers/discount_provider.dart';
 import 'providers/history_provider.dart';
 
 void main() async {

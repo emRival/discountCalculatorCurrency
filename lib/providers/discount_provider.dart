@@ -58,8 +58,6 @@ class DiscountProvider extends ChangeNotifier {
     if (_currencyProvider.rates.isNotEmpty) {
       // Get exchange rate for the selected currency
       double rate = _currencyProvider.rates[_selectedCurrencyOnline] ?? 1.0;
-      print("Rate: ${_currencyProvider.rates}");
-      print('Currency Formatter: ${currencyFormatter.currencySymbol}');
 
       // Calculate final price after conversion
       finalPriceAfterExchange = (finalPrice ?? 0) * rate;
