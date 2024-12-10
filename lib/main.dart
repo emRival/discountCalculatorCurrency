@@ -1,6 +1,5 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:discount_and_currency_calculator/model/discount_history.dart';
-import 'package:discount_and_currency_calculator/pages/navigation.dart';
 import 'package:discount_and_currency_calculator/pages/splash_screen.dart';
 import 'package:discount_and_currency_calculator/providers/currency_provider.dart';
 import 'package:discount_and_currency_calculator/providers/discount_provider.dart';
@@ -9,7 +8,6 @@ import 'package:hive/hive.dart';
 import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 import 'database/hive_manager.dart';
-import 'providers/discount_provider.dart';
 import 'providers/history_provider.dart';
 
 void main() async {
@@ -21,8 +19,9 @@ void main() async {
       isToolbarVisible: !(defaultTargetPlatform == TargetPlatform.iOS ||
           defaultTargetPlatform == TargetPlatform.android),
       defaultDevice: Devices.ios.iPhone13ProMax,
-      enabled: true,
-      builder: (context) =>  MultiProvider(providers: [
+      enabled: !(defaultTargetPlatform == TargetPlatform.iOS ||
+          defaultTargetPlatform == TargetPlatform.android),
+      builder: (context) => MultiProvider(providers: [
         ChangeNotifierProvider(create: (_) => DiscountProvider()),
         ChangeNotifierProvider(
           create: (_) => HistoryProvider(
@@ -40,6 +39,7 @@ class DiscountCalculatorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // ignore: deprecated_member_use
       useInheritedMediaQuery: true,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
